@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DatePickerComponent } from '../../../components/date-picker/date-picker.component';
 import { DateTimePickerService } from '../../../services/date-time-picker.service';
 
 
@@ -11,9 +10,11 @@ import { DateTimePickerService } from '../../../services/date-time-picker.servic
 export class DateTimePickerDemoComponent implements OnInit {
 
   constructor(private datetimepickerService: DateTimePickerService) {
-    this.datetimepickerService.conf0 = false;
-    this.datetimepickerService.conf1 = true;
-   }
+    this.datetimepickerService.configDate.format = datetimepickerService.formats.event_date;
+    this.datetimepickerService.configDateTime.format = datetimepickerService.formats.iso_date + ' '
+      + datetimepickerService.formats.iso_time;
+    this.datetimepickerService.configTime.format = datetimepickerService.formats.event_time;
+  }
 
   ngOnInit() {
   }
@@ -23,4 +24,17 @@ export class DateTimePickerDemoComponent implements OnInit {
       console.log('DateTick Hanlder  - ' + value);
     }
   }
+
+  datetimetickHandler(value) {
+    if (value) {
+      console.log('DateTimeTick Hanlder  - ' + value);
+    }
+  }
+
+  timetickHandler(value) {
+    if (value) {
+      console.log('TimeTick Hanlder  - ' + value);
+    }
+  }
+
 }

@@ -1,1 +1,1 @@
-<input class="form-control" [dpDayPicker]="config" theme="dp-material" mode="time" />
+<input id="time" class="form-control" [(ngModel)]="time" [dpDayPicker]="configTime" theme="dp-material" mode="time" (ngModelChange)="getTime($event)"/>

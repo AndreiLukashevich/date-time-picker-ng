@@ -12,35 +12,20 @@ import { DateTimePickerService } from '../../services/date-time-picker.service';
 })
 export class DatePickerComponent implements OnInit {
 
-  private conf0;
-  private conf1;
-
   @Output()
   datetick: EventEmitter<any> = new EventEmitter();
 
-  private config0 = {
-    allowMultiSelect: true,
-    format: 'MM/DD/YYYY'
-  };
-
-  private config1 = {
-    allowMultiSelect: true,
-    format: 'D MMM YYYY'
-  };
-
-
-  public date: any = 0;
+  private configDate;
+  private date: any;
 
   constructor(private datetimepickerService: DateTimePickerService) {
-    this.conf0 = datetimepickerService.conf0;
-    this.conf1 = datetimepickerService.conf1;
+    this.configDate = datetimepickerService.configDate;
   }
 
   ngOnInit() {
   }
 
   getDate(e) {
-    this.date = e;
     this.callback(e);
   }
 

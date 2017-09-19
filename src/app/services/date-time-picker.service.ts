@@ -16,6 +16,17 @@ export class DateTimePickerService {
         session_time: 'hh:mm A (UTCZ)'
     };
 
-    public conf0 = false;
-    public conf1 = true;
+    public configDate = {
+        allowMultiSelect: true,
+        format: 'MM/DD/YYYY'
+    };
+
+    public configDateTime = {
+        allowMultiSelect: true,
+        format: 'MM/DD/YYYY hh:mm A'
+    };
+
+    public configTime = {
+        format: 'hh:mm A'
+    };
 }
